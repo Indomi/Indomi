@@ -11,11 +11,11 @@
   <meta name="description" content="在实际开发中遇到需要进行时间筛选的情况，mapper文件片段如下123456&amp;lt;if test=&amp;quot;beginTime!=null and beginTime!=&amp;apos;&amp;apos;&amp;quot;&amp;gt;    &amp;lt;![CDATA[and DATE_FORMAT(A.begin_time, &amp;apos;%Y-%m-%d %H:%T:%s&amp;apos;) &amp;gt;=  DATE_FO">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mybatis报错invalid comparison java.util.Date and java.lang.String">
-<meta property="og:url" content="http://yoursite.com/2018/08/16/2018-08-16/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/08/16/1/index.html">
 <meta property="og:site_name" content="寒枫">
 <meta property="og:description" content="在实际开发中遇到需要进行时间筛选的情况，mapper文件片段如下123456&amp;lt;if test=&amp;quot;beginTime!=null and beginTime!=&amp;apos;&amp;apos;&amp;quot;&amp;gt;    &amp;lt;![CDATA[and DATE_FORMAT(A.begin_time, &amp;apos;%Y-%m-%d %H:%T:%s&amp;apos;) &amp;gt;=  DATE_FO">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-16T08:30:52.721Z">
+<meta property="og:updated_time" content="2018-08-16T08:32:41.981Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mybatis报错invalid comparison java.util.Date and java.lang.String">
 <meta name="twitter:description" content="在实际开发中遇到需要进行时间筛选的情况，mapper文件片段如下123456&amp;lt;if test=&amp;quot;beginTime!=null and beginTime!=&amp;apos;&amp;apos;&amp;quot;&amp;gt;    &amp;lt;![CDATA[and DATE_FORMAT(A.begin_time, &amp;apos;%Y-%m-%d %H:%T:%s&amp;apos;) &amp;gt;=  DATE_FO">
@@ -158,7 +158,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2018-08-16" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -170,7 +170,7 @@
   
 
         
-        <a href="/2018/08/16/2018-08-16/" class="archive-article-date">
+        <a href="/2018/08/16/1/" class="archive-article-date">
   	<time datetime="2018-08-16T08:21:03.904Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-16</time>
 </a>
         
@@ -182,7 +182,7 @@
 <p>结果抛出如标题所示的错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">invalid comparison java.util.Date and java.lang.String</span><br></pre></td></tr></table></figure></p>
 <p>查了一下大概是因为</p>
 <blockquote>
-<p>mybatis 3.3.0中对于时间参数进行比较时的一个bug. 如果拿传入的时间类型参数与空字符串</p>
+<p>mybatis 3.3.0中对于时间参数进行比较时的一个bug. 如果拿传入的时间类型参数与空字符串进行对比判断会引发异常</p>
 </blockquote>
 <p>然后把代码改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;if test=&quot;beginTime!=null&quot;&gt;</span><br><span class="line">    &lt;![CDATA[and DATE_FORMAT(A.begin_time, &apos;%Y-%m-%d %H:%T:%s&apos;) &gt;=  DATE_FORMAT(#&#123;beginTime&#125;, &apos;%Y-%m-%d %H:%T:%s&apos;)]]&gt;</span><br><span class="line">&lt;/if&gt;</span><br><span class="line">&lt;if test=&quot;endTime!=null&quot;&gt;</span><br><span class="line">    &lt;![CDATA[and DATE_FORMAT(A.end_time, &apos;%Y-%m-%d %H:%T:%s&apos;) &lt;= DATE_FORMAT(#&#123;endTime&#125;, &apos;%Y-%m-%d %H:%T:%s&apos;)]]&gt;</span><br><span class="line">&lt;/if&gt;</span><br></pre></td></tr></table></figure></p>
 <p>即可</p>
@@ -265,7 +265,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/16/2018-08-16/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/16/1/" alt="微信分享二维码">
     </div>
 </div>
 

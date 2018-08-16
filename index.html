@@ -156,6 +156,81 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/16/2/">spring boot整合mybatis查询数据库返回Map字段为空不返回</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/16/2/" class="archive-article-date">
+  	<time datetime="2018-08-16T09:29:33.726Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在实际开发中遇到了使用resultMap返回数据时，表里数据为null就不返回该字段，对于前端一些组件的数据绑定来说不太方便<br>解决方法：</p>
+<ul>
+<li>在spring boot整合mybatis中，可以加入<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mybatis:</span><br><span class="line">  configuration:</span><br><span class="line">      call-setters-on-nulls: true</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>即可</p>
+<ul>
+<li><p>如果只使用mybatis，可以在<code>mybatis-config.xml</code>中加入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;settings&gt;  </span><br><span class="line">    &lt;setting name=&quot;cacheEnabled&quot; value=&quot;true&quot;/&gt;   </span><br><span class="line">    &lt;setting name=&quot;callSettersOnNulls&quot; value=&quot;true&quot;/&gt;  </span><br><span class="line">&lt;/settings&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在spring和mybatis环境下，可以配置来引入上面的配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;saasSqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;</span><br><span class="line">    &lt;property name=&quot;dataSource&quot; ref=&quot;saasDataSource&quot; /&gt;</span><br><span class="line">    &lt;!-- 实体对象 --&gt;</span><br><span class="line">    &lt;property name=&quot;typeAliasesPackage&quot; value=&quot;com.nicchagil.mybatis3spring3intg.bean&quot; /&gt;</span><br><span class="line">    &lt;!-- 自动扫描mapping.xml文件 --&gt;</span><br><span class="line">    &lt;property name=&quot;mapperLocations&quot;&gt;</span><br><span class="line">        &lt;list&gt;</span><br><span class="line">            &lt;value&gt;classpath*:com/acs/saasdb/*/mapper/*Mapper.xml&lt;/value&gt;</span><br><span class="line">        &lt;/list&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">    &lt;property name=&quot;configLocation&quot; value=&quot;classpath:/spring/mybatis-config.xml&quot;&gt;&lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/16/2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

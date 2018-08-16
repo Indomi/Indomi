@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>mybatis报错invalid comparison java.util.Date and java.lang.String | 寒枫</title>
+  <title>spring boot整合mybatis查询数据库返回Map字段为空不返回 | 寒枫</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在实际开发中遇到需要进行时间筛选的情况，mapper文件片段如下123456&amp;lt;if test=&amp;quot;beginTime!=null and beginTime!=&amp;apos;&amp;apos;&amp;quot;&amp;gt;    &amp;lt;![CDATA[and DATE_FORMAT(A.begin_time, &amp;apos;%Y-%m-%d %H:%T:%s&amp;apos;) &amp;gt;=  DATE_FO">
+  <meta name="description" content="在实际开发中遇到了使用resultMap返回数据时，表里数据为null就不返回该字段，对于前端一些组件的数据绑定来说不太方便解决方法：  在spring boot整合mybatis中，可以加入123mybatis:  configuration:      call-setters-on-nulls: true   即可  如果只使用mybatis，可以在mybatis-config.xml中加入">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mybatis报错invalid comparison java.util.Date and java.lang.String">
-<meta property="og:url" content="http://yoursite.com/2018/08/16/1/index.html">
+<meta property="og:title" content="spring boot整合mybatis查询数据库返回Map字段为空不返回">
+<meta property="og:url" content="http://yoursite.com/2018/08/16/2/index.html">
 <meta property="og:site_name" content="寒枫">
-<meta property="og:description" content="在实际开发中遇到需要进行时间筛选的情况，mapper文件片段如下123456&amp;lt;if test=&amp;quot;beginTime!=null and beginTime!=&amp;apos;&amp;apos;&amp;quot;&amp;gt;    &amp;lt;![CDATA[and DATE_FORMAT(A.begin_time, &amp;apos;%Y-%m-%d %H:%T:%s&amp;apos;) &amp;gt;=  DATE_FO">
+<meta property="og:description" content="在实际开发中遇到了使用resultMap返回数据时，表里数据为null就不返回该字段，对于前端一些组件的数据绑定来说不太方便解决方法：  在spring boot整合mybatis中，可以加入123mybatis:  configuration:      call-setters-on-nulls: true   即可  如果只使用mybatis，可以在mybatis-config.xml中加入">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-16T08:32:41.981Z">
+<meta property="og:updated_time" content="2018-08-16T09:37:09.163Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mybatis报错invalid comparison java.util.Date and java.lang.String">
-<meta name="twitter:description" content="在实际开发中遇到需要进行时间筛选的情况，mapper文件片段如下123456&amp;lt;if test=&amp;quot;beginTime!=null and beginTime!=&amp;apos;&amp;apos;&amp;quot;&amp;gt;    &amp;lt;![CDATA[and DATE_FORMAT(A.begin_time, &amp;apos;%Y-%m-%d %H:%T:%s&amp;apos;) &amp;gt;=  DATE_FO">
+<meta name="twitter:title" content="spring boot整合mybatis查询数据库返回Map字段为空不返回">
+<meta name="twitter:description" content="在实际开发中遇到了使用resultMap返回数据时，表里数据为null就不返回该字段，对于前端一些组件的数据绑定来说不太方便解决方法：  在spring boot整合mybatis中，可以加入123mybatis:  configuration:      call-setters-on-nulls: true   即可  如果只使用mybatis，可以在mybatis-config.xml中加入">
   
     <link rel="alternative" href="/atom.xml" title="寒枫" type="application/atom+xml">
   
@@ -158,34 +158,39 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      mybatis报错invalid comparison java.util.Date and java.lang.String
+      spring boot整合mybatis查询数据库返回Map字段为空不返回
     </h1>
   
 
         
-        <a href="/2018/08/16/1/" class="archive-article-date">
-  	<time datetime="2018-08-16T08:21:03.904Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-16</time>
+        <a href="/2018/08/16/2/" class="archive-article-date">
+  	<time datetime="2018-08-16T09:29:33.726Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在实际开发中遇到需要进行时间筛选的情况，mapper文件片段如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;if test=&quot;beginTime!=null and beginTime!=&apos;&apos;&quot;&gt;</span><br><span class="line">    &lt;![CDATA[and DATE_FORMAT(A.begin_time, &apos;%Y-%m-%d %H:%T:%s&apos;) &gt;=  DATE_FORMAT(#&#123;beginTime&#125;, &apos;%Y-%m-%d %H:%T:%s&apos;)]]&gt;</span><br><span class="line">&lt;/if&gt;</span><br><span class="line">&lt;if test=&quot;endTime!=null and endTime!=&apos;&apos;&quot;&gt;</span><br><span class="line">    &lt;![CDATA[and DATE_FORMAT(A.end_time, &apos;%Y-%m-%d %H:%T:%s&apos;) &lt;= DATE_FORMAT(#&#123;endTime&#125;, &apos;%Y-%m-%d %H:%T:%s&apos;)]]&gt;</span><br><span class="line">&lt;/if&gt;</span><br></pre></td></tr></table></figure></p>
-<p>结果抛出如标题所示的错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">invalid comparison java.util.Date and java.lang.String</span><br></pre></td></tr></table></figure></p>
-<p>查了一下大概是因为</p>
-<blockquote>
-<p>mybatis 3.3.0中对于时间参数进行比较时的一个bug. 如果拿传入的时间类型参数与空字符串进行对比判断会引发异常</p>
-</blockquote>
-<p>然后把代码改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;if test=&quot;beginTime!=null&quot;&gt;</span><br><span class="line">    &lt;![CDATA[and DATE_FORMAT(A.begin_time, &apos;%Y-%m-%d %H:%T:%s&apos;) &gt;=  DATE_FORMAT(#&#123;beginTime&#125;, &apos;%Y-%m-%d %H:%T:%s&apos;)]]&gt;</span><br><span class="line">&lt;/if&gt;</span><br><span class="line">&lt;if test=&quot;endTime!=null&quot;&gt;</span><br><span class="line">    &lt;![CDATA[and DATE_FORMAT(A.end_time, &apos;%Y-%m-%d %H:%T:%s&apos;) &lt;= DATE_FORMAT(#&#123;endTime&#125;, &apos;%Y-%m-%d %H:%T:%s&apos;)]]&gt;</span><br><span class="line">&lt;/if&gt;</span><br></pre></td></tr></table></figure></p>
+        <p>在实际开发中遇到了使用resultMap返回数据时，表里数据为null就不返回该字段，对于前端一些组件的数据绑定来说不太方便<br>解决方法：</p>
+<ul>
+<li>在spring boot整合mybatis中，可以加入<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mybatis:</span><br><span class="line">  configuration:</span><br><span class="line">      call-setters-on-nulls: true</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <p>即可</p>
+<ul>
+<li><p>如果只使用mybatis，可以在<code>mybatis-config.xml</code>中加入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;settings&gt;  </span><br><span class="line">    &lt;setting name=&quot;cacheEnabled&quot; value=&quot;true&quot;/&gt;   </span><br><span class="line">    &lt;setting name=&quot;callSettersOnNulls&quot; value=&quot;true&quot;/&gt;  </span><br><span class="line">&lt;/settings&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在spring和mybatis环境下，可以配置来引入上面的配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;saasSqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;</span><br><span class="line">    &lt;property name=&quot;dataSource&quot; ref=&quot;saasDataSource&quot; /&gt;</span><br><span class="line">    &lt;!-- 实体对象 --&gt;</span><br><span class="line">    &lt;property name=&quot;typeAliasesPackage&quot; value=&quot;com.nicchagil.mybatis3spring3intg.bean&quot; /&gt;</span><br><span class="line">    &lt;!-- 自动扫描mapping.xml文件 --&gt;</span><br><span class="line">    &lt;property name=&quot;mapperLocations&quot;&gt;</span><br><span class="line">        &lt;list&gt;</span><br><span class="line">            &lt;value&gt;classpath*:com/acs/saasdb/*/mapper/*Mapper.xml&lt;/value&gt;</span><br><span class="line">        &lt;/list&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">    &lt;property name=&quot;configLocation&quot; value=&quot;classpath:/spring/mybatis-config.xml&quot;&gt;&lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
 
@@ -265,7 +270,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/16/1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/16/2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -279,18 +284,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/08/16/2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          spring boot整合mybatis查询数据库返回Map字段为空不返回
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/08/16/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2018/08/16/1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mybatis报错invalid comparison java.util.Date and java.lang.String</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -318,7 +314,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="1" data-title="mybatis报错invalid comparison java.util.Date and java.lang.String" data-url="http://yoursite.com/2018/08/16/1/"></div>
+	<div class="ds-thread" data-thread-key="2" data-title="spring boot整合mybatis查询数据库返回Map字段为空不返回" data-url="http://yoursite.com/2018/08/16/2/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

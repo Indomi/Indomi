@@ -9,13 +9,14 @@
   <title>spring boot整合mybatis查询数据库返回Map字段为空不返回 | 寒枫</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="在实际开发中遇到了使用resultMap返回数据时，表里数据为null就不返回该字段，对于前端一些组件的数据绑定来说不太方便解决方法：  在spring boot整合mybatis中，可以加入  123mybatis:  configuration:      call-setters-on-nulls: true 即可  如果只使用mybatis，可以在mybatis-config.xml中加入">
+<meta name="keywords" content="spring boot,mybatis,java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="spring boot整合mybatis查询数据库返回Map字段为空不返回">
 <meta property="og:url" content="http://yoursite.com/2018/08/16/2/index.html">
 <meta property="og:site_name" content="寒枫">
 <meta property="og:description" content="在实际开发中遇到了使用resultMap返回数据时，表里数据为null就不返回该字段，对于前端一些组件的数据绑定来说不太方便解决方法：  在spring boot整合mybatis中，可以加入  123mybatis:  configuration:      call-setters-on-nulls: true 即可  如果只使用mybatis，可以在mybatis-config.xml中加入">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-16T09:41:36.552Z">
+<meta property="og:updated_time" content="2018-08-16T09:47:44.029Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spring boot整合mybatis查询数据库返回Map字段为空不返回">
 <meta name="twitter:description" content="在实际开发中遇到了使用resultMap返回数据时，表里数据为null就不返回该字段，对于前端一些组件的数据绑定来说不太方便解决方法：  在spring boot整合mybatis中，可以加入  123mybatis:  configuration:      call-setters-on-nulls: true 即可  如果只使用mybatis，可以在mybatis-config.xml中加入">
@@ -220,6 +221,25 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring boot</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mybatis</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -430,6 +450,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring boot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

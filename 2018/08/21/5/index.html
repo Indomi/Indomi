@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>最全的Java笔试题库之选择题篇-(1-60)（转载） | 寒枫</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.下面中哪两个可以在A的子类中使用：（ ） 12345class A &amp;#123;    protected int method1 (int a, int b) &amp;#123;        return 0;    &amp;#125;&amp;#125; A. public int method 1 (int a, int b) { return 0; }B. private int method1 (in">
+  <meta name="description" content="1-60题1.下面中哪两个可以在A的子类中使用：（ ）12345class A &amp;#123;    protected int method1 (int a, int b) &amp;#123;        return 0;    &amp;#125;&amp;#125; A. public int method 1 (int a, int b) { return 0; }B. private int method1">
 <meta name="keywords" content="java,转载">
 <meta property="og:type" content="article">
 <meta property="og:title" content="最全的Java笔试题库之选择题篇-(1-60)（转载）">
 <meta property="og:url" content="http://yoursite.com/2018/08/21/5/index.html">
 <meta property="og:site_name" content="寒枫">
-<meta property="og:description" content="1.下面中哪两个可以在A的子类中使用：（ ） 12345class A &amp;#123;    protected int method1 (int a, int b) &amp;#123;        return 0;    &amp;#125;&amp;#125; A. public int method 1 (int a, int b) { return 0; }B. private int method1 (in">
+<meta property="og:description" content="1-60题1.下面中哪两个可以在A的子类中使用：（ ）12345class A &amp;#123;    protected int method1 (int a, int b) &amp;#123;        return 0;    &amp;#125;&amp;#125; A. public int method 1 (int a, int b) { return 0; }B. private int method1">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-21T04:04:26.591Z">
+<meta property="og:updated_time" content="2018-08-21T04:12:59.333Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="最全的Java笔试题库之选择题篇-(1-60)（转载）">
-<meta name="twitter:description" content="1.下面中哪两个可以在A的子类中使用：（ ） 12345class A &amp;#123;    protected int method1 (int a, int b) &amp;#123;        return 0;    &amp;#125;&amp;#125; A. public int method 1 (int a, int b) { return 0; }B. private int method1 (in">
+<meta name="twitter:description" content="1-60题1.下面中哪两个可以在A的子类中使用：（ ）12345class A &amp;#123;    protected int method1 (int a, int b) &amp;#123;        return 0;    &amp;#125;&amp;#125; A. public int method 1 (int a, int b) { return 0; }B. private int method1">
   
     <link rel="alternative" href="/atom.xml" title="寒枫" type="application/atom+xml">
   
@@ -177,8 +177,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.下面中哪两个可以在A的子类中使用：（ ）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">int</span> <span class="title">method1</span> <span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="1-60题"><a href="#1-60题" class="headerlink" title="1-60题"></a>1-60题</h1><h2 id="1-下面中哪两个可以在A的子类中使用：（-）"><a href="#1-下面中哪两个可以在A的子类中使用：（-）" class="headerlink" title="1.下面中哪两个可以在A的子类中使用：（ ）"></a>1.下面中哪两个可以在A的子类中使用：（ ）</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">int</span> <span class="title">method1</span> <span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>A. <code>public int method 1 (int a, int b) { return 0; }</code><br>B. <code>private int method1 (int a, int b) { return 0; }</code><br>C. <code>private int method1 (int a, long b) { return 0; }</code><br>D. <code>public short method1 (int a, int b) { return 0; }</code></p>
 <p>解答：AC<br>主要考查子类重写父类的方法的原则<br>B，子类重写父类的方法，访问权限不能降低<br>C，属于重载<br>D，子类重写父类的方法 返回值类型要相同或是父类方法返回值类型的子类<br>2.Abstract method cannot be static. True or False ?<br>A True<br>B False</p>
 <p>解答：A<br>抽象方法可以在子类中被重写，但是静态方法不能在子类中被重写，静态方法和静态属性与对象是无关的，只与类有关，这与abstract是矛盾的，所以abstract是不能被修饰为static，否则就失去了abstract的意义了<br>3.What will be the output when you compile and execute the following program.</p>

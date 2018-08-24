@@ -155,17 +155,524 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
   
-    
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/24/6/">在Ubuntu18下adb连接不上android手机的解决方案</a>
+    </h1>
   
+
+        
+        <a href="/2018/08/24/6/" class="archive-article-date">
+  	<time datetime="2018-08-24T01:18:49.573Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-24</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>不多bb，直接上解决方案：<br><a href="http://developer.android.com/tools/device.html" target="_blank" rel="noopener">谷歌提供的方法</a></p>
+<p>1.修改/etc/udev/rules.d/51-android.rules的方法：</p>
+<p>在该文件下添加(如无则自己创建)<br><code>SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;0bb4&quot;, MODE=&quot;0666&quot;, GROUP=&quot;plugdev&quot;</code></p>
+<blockquote>
+<p>这样做是让adb对usb设备具有访问权限，但是完全可以<code>sudo adb devices</code></p>
+</blockquote>
+<p>2.通过上面办法还是不能识别adb，说明安卓的VID没有添加到adb中，需要手动添加</p>
+<p>添加的文件位置与你第一次启动adb server有关，如你在root上启动adb server，则其位置在<code>/root/.android/adb_usb.ini</code>，否则其位置在<code>$HOME/.android/adb_usb.ini</code>下，如果$HOME为空，则在<code>/tmp/.android/adb_usb.ini</code>下</p>
+<p>我三个地方都没有找到，就在<code>$HOME/.android/</code>下创建了文件</p>
+<p>获取VID方法是插上设备敲<code>lsusb</code>，拔下设备敲<code>lsusb</code><br>单独的那个类似<code>Bus 001 Device 034: ID 2006:5010</code>就是插入的设备，VID为2006</p>
+<p>在<code>adb_usb.ini</code>中加入<code>0x2006</code>保存，然后<code>adb kill-server</code>杀掉adb重新启动即可</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Ubuntu</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">adb</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/24/6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
   
+    <article id="post-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
   
-    
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/21/5/">最全的Java笔试题库之选择题篇-(1-60)（转载）</a>
+    </h1>
   
+
+        
+        <a href="/2018/08/21/5/" class="archive-article-date">
+  	<time datetime="2018-08-21T01:31:52.530Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-21</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-60"><a href="#1-60" class="headerlink" title="1-60"></a>1-60</h1><h2 id="1-下面中哪两个可以在A的子类中使用：（-）"><a href="#1-下面中哪两个可以在A的子类中使用：（-）" class="headerlink" title="1. 下面中哪两个可以在A的子类中使用：（ ）"></a>1. 下面中哪两个可以在A的子类中使用：（ ）</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">int</span> <span class="title">method1</span> <span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>A. <code>public int method 1 (int a, int b) { return 0; }</code><br>B. <code>private int method1 (int a, int b) { return 0; }</code><br>C. <code>private int method1 (int a, long b) { return 0; }</code><br>D. <code>public short method1 (int a, int b) { return 0; }</code></p>
+<p>解答：AC<br>主要考查子类重写父类的方法的原则<br>B，子类重写父类的方法，访问权限不能降低<br>C，属于重载<br>D，子类重写父类的方法 返回值类型要相同或是父类方法返回值类型的子类</p>
+        
+          <a class="article-more-a" href="/2018/08/21/5/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">转载</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/21/5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/17/4/">elementUI 表格 获取数据后this.$refs.xxx.toggleRowSelection无效</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/17/4/" class="archive-article-date">
+  	<time datetime="2018-08-17T07:32:13.263Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用elementUI构建样式界面时，有一个跨页多选数据的需求，尝试在跳转其他页后根据已存的数据来判断是否已勾选<br>官网有一个<code>toggleRowSelection(row,selection)</code>方法<br>按着elementUI官网给出的示例一直不能触发toggleRowSelection<br>根据网上给出的<a href="https://blog.csdn.net/ltf_1225/article/details/81087821" target="_blank" rel="noopener">解决办法</a></p>
+<ul>
+<li>获取数据后在需要进行勾选操作的外面套一个$nextTick即可</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$nextTick(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.deviceTableData.map(<span class="function">(<span class="params">v</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.$refs.deviceTable.toggleRowSelection(v, <span class="literal">true</span>))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>原因是：</p>
+<blockquote>
+<p>$nextTick 是在下次 DOM 更新循环结束之后执行延迟回调，在修改数据之后使用 $nextTick，则可以在回调中获取更新后的 DOM</p>
+</blockquote>
+<p>暂时还没有搞懂</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">elementUI</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Vuejs</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/17/4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/16/3/">2018</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/16/3/" class="archive-article-date">
+  	<time datetime="2018-08-16T09:50:11.554Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://i.loli.net/2018/08/16/5b7548c5b9908.jpg" alt="学校"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">photo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/16/3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/16/2/">spring boot整合mybatis查询数据库返回Map字段为空不返回</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/16/2/" class="archive-article-date">
+  	<time datetime="2018-08-16T09:29:33.726Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在实际开发中遇到了使用resultMap返回数据时，表里数据为null就不返回该字段，对于前端一些组件的数据绑定来说不太方便<br>解决方法：</p>
+<ul>
+<li>在spring boot整合mybatis中，可以加入</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mybatis:</span><br><span class="line">  configuration:</span><br><span class="line">      call-setters-on-nulls: true</span><br></pre></td></tr></table></figure>
+<p>即可</p>
+<ul>
+<li>如果只使用mybatis，可以在<code>mybatis-config.xml</code>中加入</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"cacheEnabled"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span>   </span><br><span class="line">    <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"callSettersOnNulls"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>在spring和mybatis环境下，可以配置来引入上面的配置</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"saasSqlSessionFactory"</span> <span class="attr">class</span>=<span class="string">"org.mybatis.spring.SqlSessionFactoryBean"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dataSource"</span> <span class="attr">ref</span>=<span class="string">"saasDataSource"</span> /&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 实体对象 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"typeAliasesPackage"</span> <span class="attr">value</span>=<span class="string">"com.nicchagil.mybatis3spring3intg.bean"</span> /&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 自动扫描mapping.xml文件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"mapperLocations"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">list</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>classpath*:com/acs/saasdb/*/mapper/*Mapper.xml<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"configLocation"</span> <span class="attr">value</span>=<span class="string">"classpath:/spring/mybatis-config.xml"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mybatis</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring boot</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/16/2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/16/1/">mybatis报错invalid comparison java.util.Date and java.lang.String</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/16/1/" class="archive-article-date">
+  	<time datetime="2018-08-16T08:21:03.904Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在实际开发中遇到需要进行时间筛选的情况，mapper文件片段如下</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;if test="beginTime!=null and beginTime!=''"&gt;</span><br><span class="line">    &lt;![CDATA[and DATE_FORMAT(A.begin_time, '%Y-%m-%d %H:%T:%s') &gt;=  DATE_FORMAT(#&#123;beginTime&#125;, '%Y-%m-%d %H:%T:%s')]]&gt;</span><br><span class="line">&lt;/if&gt;</span><br><span class="line">&lt;if test="endTime!=null and endTime!=''"&gt;</span><br><span class="line">    &lt;![CDATA[and DATE_FORMAT(A.end_time, '%Y-%m-%d %H:%T:%s') &lt;= DATE_FORMAT(#&#123;endTime&#125;, '%Y-%m-%d %H:%T:%s')]]&gt;</span><br><span class="line">&lt;/if&gt;</span><br></pre></td></tr></table></figure>
+<p>结果抛出如标题所示的错误</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">invalid comparison java.util.Date and java.lang.String</span><br></pre></td></tr></table></figure>
+<p>查了一下大概是因为</p>
+<blockquote>
+<p>mybatis 3.3.0中对于时间参数进行比较时的一个bug. 如果拿传入的时间类型参数与空字符串进行对比判断会引发异常</p>
+</blockquote>
+<p>然后把代码改为</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;if test="beginTime!=null"&gt;</span><br><span class="line">    &lt;![CDATA[and DATE_FORMAT(A.begin_time, '%Y-%m-%d %H:%T:%s') &gt;=  DATE_FORMAT(#&#123;beginTime&#125;, '%Y-%m-%d %H:%T:%s')]]&gt;</span><br><span class="line">&lt;/if&gt;</span><br><span class="line">&lt;if test="endTime!=null"&gt;</span><br><span class="line">    &lt;![CDATA[and DATE_FORMAT(A.end_time, '%Y-%m-%d %H:%T:%s') &lt;= DATE_FORMAT(#&#123;endTime&#125;, '%Y-%m-%d %H:%T:%s')]]&gt;</span><br><span class="line">&lt;/if&gt;</span><br></pre></td></tr></table></figure>
+<p>即可</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mybatis</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/16/1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
   
   
 

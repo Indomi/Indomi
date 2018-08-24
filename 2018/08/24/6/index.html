@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>寒枫</title>
+  <title>在Ubuntu18下adb连接不上android手机的解决方案 | 寒枫</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="寒枫">
+  <meta name="description" content="不多bb，直接上解决方案：谷歌提供的方法 1.修改/etc/udev/rules.d/51-android.rules的方法： 在该文件下添加(如无则自己创建)SUBSYSTEM==&amp;quot;usb&amp;quot;, ATTR{idVendor}==&amp;quot;0bb4&amp;quot;, MODE=&amp;quot;0666&amp;quot;, GROUP=&amp;quot;plugdev&amp;quot;  这样做是让adb">
+<meta name="keywords" content="Ubuntu,Linux,adb,Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Ubuntu18下adb连接不上android手机的解决方案">
 <meta property="og:url" content="http://yoursite.com/2018/08/24/6/index.html">
 <meta property="og:site_name" content="寒枫">
+<meta property="og:description" content="不多bb，直接上解决方案：谷歌提供的方法 1.修改/etc/udev/rules.d/51-android.rules的方法： 在该文件下添加(如无则自己创建)SUBSYSTEM==&amp;quot;usb&amp;quot;, ATTR{idVendor}==&amp;quot;0bb4&amp;quot;, MODE=&amp;quot;0666&amp;quot;, GROUP=&amp;quot;plugdev&amp;quot;  这样做是让adb">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-24T01:18:49.573Z">
+<meta property="og:updated_time" content="2018-08-24T01:39:56.432Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="寒枫">
+<meta name="twitter:title" content="在Ubuntu18下adb连接不上android手机的解决方案">
+<meta name="twitter:description" content="不多bb，直接上解决方案：谷歌提供的方法 1.修改/etc/udev/rules.d/51-android.rules的方法： 在该文件下添加(如无则自己创建)SUBSYSTEM==&amp;quot;usb&amp;quot;, ATTR{idVendor}==&amp;quot;0bb4&amp;quot;, MODE=&amp;quot;0666&amp;quot;, GROUP=&amp;quot;plugdev&amp;quot;  这样做是让adb">
   
     <link rel="alternative" href="/atom.xml" title="寒枫" type="application/atom+xml">
   
@@ -156,9 +160,35 @@
             <article id="post-6" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      在Ubuntu18下adb连接不上android手机的解决方案
+    </h1>
+  
+
+        
+        <a href="/2018/08/24/6/" class="archive-article-date">
+  	<time datetime="2018-08-24T01:18:49.573Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-24</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>不多bb，直接上解决方案：<br><a href="http://developer.android.com/tools/device.html" target="_blank" rel="noopener">谷歌提供的方法</a></p>
+<p>1.修改/etc/udev/rules.d/51-android.rules的方法：</p>
+<p>在该文件下添加(如无则自己创建)<br><code>SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;0bb4&quot;, MODE=&quot;0666&quot;, GROUP=&quot;plugdev&quot;</code></p>
+<blockquote>
+<p>这样做是让adb对usb设备具有访问权限，但是完全可以<code>sudo adb devices</code></p>
+</blockquote>
+<p>2.通过上面办法还是不能识别adb，说明安卓的VID没有添加到adb中，需要手动添加</p>
+<p>添加的文件位置与你第一次启动adb server有关，如你在root上启动adb server，则其位置在<code>/root/.android/adb_usb.ini</code>，否则其位置在<code>$HOME/.android/adb_usb.ini</code>下，如果$HOME为空，则在<code>/tmp/.android/adb_usb.ini</code>下</p>
+<p>我三个地方都没有找到，就在<code>$HOME/.android/</code>下创建了文件</p>
+<p>获取VID方法是插上设备敲<code>lsusb</code>，拔下设备敲<code>lsusb</code><br>单独的那个类似<code>Bus 001 Device 034: ID 2006:5010</code>就是插入的设备，VID为2006</p>
+<p>在<code>adb_usb.ini</code>中加入<code>0x2006</code>保存，然后<code>adb kill-server</code>杀掉adb重新启动即可</p>
+
       
 
       
@@ -187,6 +217,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Ubuntu</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">adb</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -382,6 +435,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring boot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">photo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">elementUI</a>
               </li>
              
@@ -394,23 +463,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">转载</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">photo</a>
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring boot</a>
+                <a href="javascript:void(0)" class="js-tag color4">adb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
             
             <div class="clearfix"></div>

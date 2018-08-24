@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="寒枫">
 <meta property="og:description" content="1-601. 下面中哪两个可以在A的子类中使用：（ ）12345class A &amp;#123;    protected int method1 (int a, int b) &amp;#123;        return 0;    &amp;#125;&amp;#125; A. public int method 1 (int a, int b) { return 0; }B. private int method1">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-21T04:48:31.886Z">
+<meta property="og:updated_time" content="2018-08-21T04:50:04.324Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="最全的Java笔试题库之选择题篇-(1-60)（转载）">
 <meta name="twitter:description" content="1-601. 下面中哪两个可以在A的子类中使用：（ ）12345class A &amp;#123;    protected int method1 (int a, int b) &amp;#123;        return 0;    &amp;#125;&amp;#125; A. public int method 1 (int a, int b) { return 0; }B. private int method1">
@@ -194,7 +194,7 @@
 <p>解答：BC<br>由static修饰的变量称为类变量或是静态变量<br>方法加载的时候创建局部变量</p>
 <h2 id="8-下列关于修饰符混用的说法，错误的是（-）："><a href="#8-下列关于修饰符混用的说法，错误的是（-）：" class="headerlink" title="8.下列关于修饰符混用的说法，错误的是（ ）："></a>8.下列关于修饰符混用的说法，错误的是（ ）：</h2><p>A．abstract不能与final并列修饰同一个类<br>B．abstract类中可以有private的成员<br>C．abstract方法必须在abstract类中<br>D．static方法中能处理非static的属性</p>
 <p>解答 D<br>静态方法中不能引用非静态的成员</p>
-<h2 id="9-执行完以下代码int-x-new-int-25-；后，以下哪项说明是正确的（-）："><a href="#9-执行完以下代码int-x-new-int-25-；后，以下哪项说明是正确的（-）：" class="headerlink" title="9.执行完以下代码int [ ] x = new int[25]；后，以下哪项说明是正确的（ ）："></a>9.执行完以下代码int [ ] x = new int[25]；后，以下哪项说明是正确的（ ）：</h2><p>A、 x[24]为0<br>B、 x[24]未定义<br>C、 x[25]为0<br>D、 x[0]为空</p>
+<h2 id="9-执行完以下代码int-x-new-int-25-后，以下哪项说明是正确的（-）："><a href="#9-执行完以下代码int-x-new-int-25-后，以下哪项说明是正确的（-）：" class="headerlink" title="9.执行完以下代码int [ ] x = new int[25];后，以下哪项说明是正确的（ ）："></a>9.执行完以下代码<code>int [ ] x = new int[25];</code>后，以下哪项说明是正确的（ ）：</h2><p>A、 x[24]为0<br>B、 x[24]未定义<br>C、 x[25]为0<br>D、 x[0]为空</p>
 <p>解答：A<br>x属于引用类型，该引用类型的每一个成员是int类型，默认值为：0</p>
 <h2 id="10-编译运行以下程序后，关于输出结果的说明正确的是-（-）："><a href="#10-编译运行以下程序后，关于输出结果的说明正确的是-（-）：" class="headerlink" title="10.编译运行以下程序后，关于输出结果的说明正确的是 （ ）："></a>10.编译运行以下程序后，关于输出结果的说明正确的是 （ ）：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Conditional</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[ ])</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x=<span class="number">4</span>;</span><br><span class="line">        System.out.println(“value is “+ ((x&gt;<span class="number">4</span>) ? <span class="number">99.9</span> :<span class="number">9</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>A、 输出结果为：value is 99.99<br>B、 输出结果为：value is 9<br>C、 输出结果为：value is 9.0<br>D、 编译错误</p>
@@ -430,6 +430,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2018/08/24/6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
   
     <a href="/2018/08/17/4/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">elementUI 表格 获取数据后this.$refs.xxx.toggleRowSelection无效</div>
@@ -561,22 +570,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">photo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring boot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">elementUI</a>
               </li>
              
@@ -589,7 +582,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">转载</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">photo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring boot</a>
               </li>
             
             <div class="clearfix"></div>

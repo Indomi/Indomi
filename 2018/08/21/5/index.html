@@ -16,13 +16,15 @@
 <meta property="og:site_name" content="寒枫">
 <meta property="og:description" content="1-601. 下面中哪两个可以在A的子类中使用：（ ）12345class A &amp;#123;    protected int method1 (int a, int b) &amp;#123;        return 0;    &amp;#125;&amp;#125; A. public int method 1 (int a, int b) { return 0; }B. private int method1">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-21T04:50:04.324Z">
+<meta property="og:updated_time" content="2018-08-24T08:17:21.047Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="最全的Java笔试题库之选择题篇-(1-60)（转载）">
 <meta name="twitter:description" content="1-601. 下面中哪两个可以在A的子类中使用：（ ）12345class A &amp;#123;    protected int method1 (int a, int b) &amp;#123;        return 0;    &amp;#125;&amp;#125; A. public int method 1 (int a, int b) { return 0; }B. private int method1">
   
     <link rel="alternative" href="/atom.xml" title="寒枫" type="application/atom+xml">
   
+  
+    <link rel="icon" href="http://static.pig66.com/uploadfile/2017/0526/20170526115718823.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -35,6 +37,7 @@
 
   
 
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </head>
 
 <body>
@@ -70,8 +73,6 @@
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
     			
             
-    			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
     			
             
     			
@@ -180,6 +181,7 @@
         <h1 id="1-60"><a href="#1-60" class="headerlink" title="1-60"></a>1-60</h1><h2 id="1-下面中哪两个可以在A的子类中使用：（-）"><a href="#1-下面中哪两个可以在A的子类中使用：（-）" class="headerlink" title="1. 下面中哪两个可以在A的子类中使用：（ ）"></a>1. 下面中哪两个可以在A的子类中使用：（ ）</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">int</span> <span class="title">method1</span> <span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>A. <code>public int method 1 (int a, int b) { return 0; }</code><br>B. <code>private int method1 (int a, int b) { return 0; }</code><br>C. <code>private int method1 (int a, long b) { return 0; }</code><br>D. <code>public short method1 (int a, int b) { return 0; }</code></p>
 <p>解答：AC<br>主要考查子类重写父类的方法的原则<br>B，子类重写父类的方法，访问权限不能降低<br>C，属于重载<br>D，子类重写父类的方法 返回值类型要相同或是父类方法返回值类型的子类</p>
+<a id="more"></a>
 <h2 id="2-Abstract-method-cannot-be-static-True-or-False"><a href="#2-Abstract-method-cannot-be-static-True-or-False" class="headerlink" title="2. Abstract method cannot be static. True or False ?"></a>2. Abstract method cannot be static. True or False ?</h2><p>A True<br>B False</p>
 <p>解答：A<br>抽象方法可以在子类中被重写，但是静态方法不能在子类中被重写，静态方法和静态属性与对象是无关的，只与类有关，这与abstract是矛盾的，所以abstract是不能被修饰为static，否则就失去了abstract的意义了</p>
 <h2 id="3-What-will-be-the-output-when-you-compile-and-execute-the-following-program"><a href="#3-What-will-be-the-output-when-you-compile-and-execute-the-following-program" class="headerlink" title="3.What will be the output when you compile and execute the following program."></a>3.What will be the output when you compile and execute the following program.</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(“Base.test()”);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Base</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(“Child.test()”);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] a)</span> </span>&#123;</span><br><span class="line">        Child anObj = <span class="keyword">new</span> Child();</span><br><span class="line">        Base baseObj = (Base)anObj;</span><br><span class="line">        baseObj.test();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -366,6 +368,9 @@
 		</ul>
 	</div>
 
+      <span id="busuanzi_container_page_pv">
+        阅读量<span id="busuanzi_value_page_pv"></span>次
+      </span>
       
 
       
@@ -464,7 +469,15 @@
     </div>
 </aside>
 
-
+<!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="请将此处替换为配置SourceID的语句" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cytMy1IM8'; 
+var conf = 'prod_e7dd2059f8137f654fa633b0272a4240'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
 
   
   
@@ -487,10 +500,8 @@
     		&copy; 2018 Indomi
     	</div>
       	<div class="footer-right">
-						<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 						<span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人次</span>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten Edit by indomi
       	</div>
     </div>
   </div>
@@ -508,7 +519,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -528,8 +539,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
     
       
-      
-      
     
       
       
@@ -541,15 +550,13 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -578,14 +585,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring boot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">photo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">elementUI</a>
               </li>
              
@@ -595,6 +594,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">photo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring boot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -660,38 +667,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     

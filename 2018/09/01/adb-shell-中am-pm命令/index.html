@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>adb shell 中am pm命令 | 寒枫</title>
+  <title>adb shell 中am命令 | 寒枫</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="adb shell 中am pm命令">
+  <meta name="description" content="am命令  am全称是activity manager，使用am去模拟各种系统的行为，例如启动一个activity，强制停止进程，发送广播进程，修改设备屏幕属性等 am &amp;lt;command&amp;gt;也可以加adb shell逐条运行eg:adb shell am start -a android.intent.action.VIEW am命令介绍：start [options] &amp;lt;INT">
+<meta name="keywords" content="adb,Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="adb shell 中am命令">
 <meta property="og:url" content="http://yoursite.com/2018/09/01/adb-shell-中am-pm命令/index.html">
 <meta property="og:site_name" content="寒枫">
+<meta property="og:description" content="am命令  am全称是activity manager，使用am去模拟各种系统的行为，例如启动一个activity，强制停止进程，发送广播进程，修改设备屏幕属性等 am &amp;lt;command&amp;gt;也可以加adb shell逐条运行eg:adb shell am start -a android.intent.action.VIEW am命令介绍：start [options] &amp;lt;INT">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-01T08:08:30.044Z">
+<meta property="og:updated_time" content="2018-09-01T08:27:07.286Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="adb shell 中am pm命令">
+<meta name="twitter:title" content="adb shell 中am命令">
+<meta name="twitter:description" content="am命令  am全称是activity manager，使用am去模拟各种系统的行为，例如启动一个activity，强制停止进程，发送广播进程，修改设备屏幕属性等 am &amp;lt;command&amp;gt;也可以加adb shell逐条运行eg:adb shell am start -a android.intent.action.VIEW am命令介绍：start [options] &amp;lt;INT">
   
     <link rel="alternative" href="/atom.xml" title="寒枫" type="application/atom+xml">
   
@@ -161,7 +165,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      adb shell 中am pm命令
+      adb shell 中am命令
     </h1>
   
 
@@ -174,7 +178,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <ul>
+<li>am命令</li>
+</ul>
+<p>am全称是activity manager，使用am去模拟各种系统的行为，例如启动一个activity，强制停止进程，发送广播进程，修改设备屏幕属性等</p>
+<p><code>am &lt;command&gt;</code><br>也可以加adb shell逐条运行<br>eg:<code>adb shell am start -a android.intent.action.VIEW</code></p>
+<p>am命令介绍：<br><code>start [options] &lt;INTENT&gt;</code>:启动activity通过指定的intent参数<br><code>startservice [options] &lt;INTENT&gt;</code> ： 启动service通过指定的intent参数。具体intent跟start命令参数相同。<br><code>force-stop &lt;PACKAGE&gt;</code>： 强制停止指定的package包应用。<br><code>kill [options] &lt;PACKAGE&gt;</code> ：杀死指定package包应用进程，该命令在安全模式下杀死进程，不影响用户体验。参数选项：<code>--user &lt;USER_ID&gt; | all | current</code>: 指定user进程杀死，如果不指定默认为所有users。（关于USER_ID下面会介绍到）<br><code>kill-all</code> ：杀死所有的后台进程。<br><code>broadcast [options] &lt;INTENT&gt;</code> ：发送一个intent。具体intent参数参照start命令参数。参数选项：<code>--user &lt;USER_ID&gt; | all | current</code>: 指定user进程杀死，如果不指定默认为所有users。<br><code>instrument [options] &lt;COMPONENT&gt;</code> ：测试命令，不多作介绍。<br><code>profile start &lt;PROCESS&gt; &lt;FILE&gt;</code> ：在<process>进程中运行profile，分析结果写到<file>里。<br><code>profile stop &lt;PROCESS&gt;</code> ：停止profile。<br><code>set-debug-app [options] &lt;PACKAGE&gt;</code> ：设置package包应用为debug模式。参数选项：<code>-w|--persistent</code>：等待进入调试模式，保留值。<br><code>clear-debug-app</code> ：清空之前用set-debug-app命令设置的package包应用。</file></process></p>
+
       
 
       
@@ -203,6 +213,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">adb</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -296,7 +321,7 @@
 
   <section id="comments">
 <!--高速版，加载速度快，使用前需测试页面的兼容性-->
-<div id="SOHUCS" sid="adb shell 中am pm命令" style="padding: 0px 30px 0px 46px;"></div>
+<div id="SOHUCS" sid="adb shell 中am命令" style="padding: 0px 30px 0px 46px;"></div>
 <script>
   (function(){
     var appid = 'cytMy1IM8',

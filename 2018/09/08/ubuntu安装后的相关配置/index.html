@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="寒枫">
 <meta property="og:description" content="整理一下安装一个新的ubuntu以后的相关配置  软件源更换  备份cd /etc/apt/sudo cp sources.list sources.list.bak替换源vi sources.list 12345678910111213141516deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multi">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-08T07:38:31.448Z">
+<meta property="og:updated_time" content="2018-09-08T07:42:54.618Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu安装后的相关配置">
 <meta name="twitter:description" content="整理一下安装一个新的ubuntu以后的相关配置  软件源更换  备份cd /etc/apt/sudo cp sources.list sources.list.bak替换源vi sources.list 12345678910111213141516deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multi">
@@ -184,6 +184,8 @@
 </ol>
 <p>备份<br><code>cd /etc/apt/</code><br><code>sudo cp sources.list sources.list.bak</code><br>替换源<br><code>vi sources.list</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse</span><br><span class="line"><span class="comment">##测试版源</span></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial-proposed main restricted universe multiverse</span><br><span class="line"><span class="comment"># 源码</span></span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse</span><br><span class="line"><span class="comment"># 测试版源</span></span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ xenial-proposed main restricted universe multiverse</span><br><span class="line"><span class="comment"># Canonical 合作伙伴和附加</span></span><br><span class="line">deb http://archive.canonical.com/ubuntu/ xenial partner</span><br><span class="line">deb http://extras.ubuntu.com/ubuntu/ xenial main</span><br></pre></td></tr></table></figure>
+<p><code>sudo apt-get update</code> 更新源<br><code>sudo apt-get upgrade</code> 更新软件</p>
+
       
 
       

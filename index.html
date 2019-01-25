@@ -229,7 +229,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/23/vue-router/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/25/小程序cover-view实践踩坑/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Indomi">
@@ -248,7 +248,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/23/vue-router/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2019/01/25/小程序cover-view实践踩坑/" itemprop="url">小程序cover-view实践踩坑</a></h1>
         
 
         <div class="post-meta">
@@ -260,8 +260,152 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-23T14:55:08+08:00">
-                2019-01-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-25T17:13:41+08:00">
+                2019-01-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="小程序使用cover-view和cover-image"><a href="#小程序使用cover-view和cover-image" class="headerlink" title="小程序使用cover-view和cover-image"></a>小程序使用<code>cover-view</code>和<code>cover-image</code></h1><blockquote>
+<p>近期有需求，使用video组件播放视频，在使用手机流量的情况下加一层遮罩来提醒，点击按钮关闭遮罩开始播放</p>
+</blockquote>
+<p><img src="https://i.loli.net/2019/01/25/5c4ad4fa60c87.jpg" alt="类似效果"></p>
+<ul>
+<li><p>最好还要加入一行标题，当前正在使用非wifi环境，观看需要使用手机流量</p>
+</li>
+<li><p>因为前期看过<code>cover-*</code>的两个组件，这个场景刚好适合，video作为原生组件，层级最高，使用<code>z-index</code>也不能改变叠放</p>
+</li>
+<li><p><code>cover-view</code>只能嵌套相同<code>cover-*</code>的组件和<code>button</code></p>
+</li>
+</ul>
+<p>根据以上需求和限制大致的思路如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"http://xxx.mp4"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">cover-view</span>&gt;</span></span><br><span class="line">    当前正在使用非wifi环境，观看需要使用手机流量</span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span>&gt;</span>使用流量播放<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">cover-view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>调整好css后发现，<code>button</code>并不能挡住<code>video</code>组件正中间的播放按钮，对比同类的实现产品，应该是增加了一层遮罩，显示视频预览图，点击播放后消失，于是增加一层<code>cover-image</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"http://xxx.mp4"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">cover-view</span>&gt;</span></span><br><span class="line">    当前正在使用非wifi环境，观看需要使用手机流量</span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span>&gt;</span>使用流量播放<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">cover-view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">cover-image</span> <span class="attr">src</span>=<span class="string">"http://xxxxx.jpg"</span>&gt;</span><span class="tag">&lt;/<span class="name">cover-image</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>通过定位将遮罩的图片铺满video组件，但是产生了以下几个bug：</p>
+<h2 id="bug1：使用z-index将按钮和标题放在遮罩之上无效"><a href="#bug1：使用z-index将按钮和标题放在遮罩之上无效" class="headerlink" title="bug1：使用z-index将按钮和标题放在遮罩之上无效"></a>bug1：使用<code>z-index</code>将按钮和标题放在遮罩之上无效</h2><h2 id="bug2-编辑器预览正常，但是真机调试后发现图片被cover-view内的标题文字压了下去"><a href="#bug2-编辑器预览正常，但是真机调试后发现图片被cover-view内的标题文字压了下去" class="headerlink" title="bug2: 编辑器预览正常，但是真机调试后发现图片被cover-view内的标题文字压了下去"></a>bug2: 编辑器预览正常，但是真机调试后发现图片被<code>cover-view</code>内的标题文字压了下去</h2><p>在网上大致一搜没有很好的解决方法，<code>cover-view</code>这个组件看来只能够用于一些简单实用的场景，在当前的需求下实现难度很大</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>通过不断对比同类的产品，我发现了一个实现思路：</p>
+<ul>
+<li>通过<code>view</code>生成一个跟<code>video</code>等高等宽的块，在<code>view</code>内实现需要的功能，然后再使用<code>wx:if</code>和<code>wx:else</code>去控制提示和视频的显示，可以很轻松的实现想要的效果</li>
+</ul>
+<blockquote>
+<p>这种方法早就应该想到，但是就想着试一试<code>cover-view</code>，搞得很麻烦</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/15/vue-router/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Indomi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="寒枫">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/15/vue-router/" itemprop="url">Vue-router</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-15T15:31:36+08:00">
+                2019-01-15
               </time>
             
 
@@ -460,7 +604,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/23/node2docker/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/10/node2docker/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Indomi">
@@ -479,7 +623,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/23/node2docker/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2019/01/10/node2docker/" itemprop="url">Node项目docker化</a></h1>
         
 
         <div class="post-meta">
@@ -491,8 +635,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-23T14:55:08+08:00">
-                2019-01-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-10T15:31:36+08:00">
+                2019-01-10
               </time>
             
 
@@ -656,7 +800,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/23/installDocker4CentOs/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/08/installDocker4CentOs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Indomi">
@@ -675,7 +819,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/23/installDocker4CentOs/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2019/01/08/installDocker4CentOs/" itemprop="url">在CentOS7安装Docker</a></h1>
         
 
         <div class="post-meta">
@@ -687,8 +831,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-23T14:55:08+08:00">
-                2019-01-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-08T15:31:36+08:00">
+                2019-01-08
               </time>
             
 
@@ -1538,126 +1682,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Indomi">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="寒枫">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/16/3/" itemprop="url">2018</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-16T17:50:11+08:00">
-                2018-08-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="https://i.loli.net/2018/08/16/5b7548c5b9908.jpg" alt="学校"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1708,7 +1732,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1721,7 +1745,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

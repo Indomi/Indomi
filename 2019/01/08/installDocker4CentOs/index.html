@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="photo," />
+  <meta name="keywords" content="CentOS,docker," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="keywords" content="photo">
+<meta name="description" content="在CentOS7安装Docker1.查看内核版本1uname -r  Docker要求CentOS系统的内核版本高于3.1.0  2.使用root权限更新yum1sudo yum update 3.卸载旧版本1sudo yum remove docker  docker-common docker-selinux docker-engine 4.安装需要的软件包 yum-util提供yum-con">
+<meta name="keywords" content="CentOS,docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018">
-<meta property="og:url" content="http://yoursite.com/2018/08/16/3/index.html">
+<meta property="og:title" content="在CentOS7安装Docker">
+<meta property="og:url" content="http://yoursite.com/2019/01/08/installDocker4CentOs/index.html">
 <meta property="og:site_name" content="寒枫">
+<meta property="og:description" content="在CentOS7安装Docker1.查看内核版本1uname -r  Docker要求CentOS系统的内核版本高于3.1.0  2.使用root权限更新yum1sudo yum update 3.卸载旧版本1sudo yum remove docker  docker-common docker-selinux docker-engine 4.安装需要的软件包 yum-util提供yum-con">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://i.loli.net/2018/08/16/5b7548c5b9908.jpg">
-<meta property="og:updated_time" content="2018-08-24T09:55:41.789Z">
+<meta property="og:updated_time" content="2019-01-25T09:11:33.594Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2018">
-<meta name="twitter:image" content="https://i.loli.net/2018/08/16/5b7548c5b9908.jpg">
+<meta name="twitter:title" content="在CentOS7安装Docker">
+<meta name="twitter:description" content="在CentOS7安装Docker1.查看内核版本1uname -r  Docker要求CentOS系统的内核版本高于3.1.0  2.使用root权限更新yum1sudo yum update 3.卸载旧版本1sudo yum remove docker  docker-common docker-selinux docker-engine 4.安装需要的软件包 yum-util提供yum-con">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/16/3/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/01/08/installDocker4CentOs/"/>
 
 
 
 
 
-  <title>2018 | 寒枫</title>
+  <title>在CentOS7安装Docker | 寒枫</title>
   
 
 
@@ -232,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/08/installDocker4CentOs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Indomi">
@@ -249,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">2018</h1>
+          <h1 class="post-title" itemprop="name headline">在CentOS7安装Docker</h1>
         
 
         <div class="post-meta">
@@ -261,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-16T17:50:11+08:00">
-                2018-08-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-08T15:31:36+08:00">
+                2019-01-08
               </time>
             
 
@@ -299,8 +300,24 @@
       
 
       
-        <p><img src="https://i.loli.net/2018/08/16/5b7548c5b9908.jpg" alt="学校"></p>
-
+        <h1 id="在CentOS7安装Docker"><a href="#在CentOS7安装Docker" class="headerlink" title="在CentOS7安装Docker"></a>在CentOS7安装Docker</h1><h2 id="1-查看内核版本"><a href="#1-查看内核版本" class="headerlink" title="1.查看内核版本"></a>1.查看内核版本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Docker要求CentOS系统的内核版本高于3.1.0</li>
+</ul>
+<h2 id="2-使用root权限更新yum"><a href="#2-使用root权限更新yum" class="headerlink" title="2.使用root权限更新yum"></a>2.使用root权限更新yum</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum update</span><br></pre></td></tr></table></figure>
+<h2 id="3-卸载旧版本"><a href="#3-卸载旧版本" class="headerlink" title="3.卸载旧版本"></a>3.卸载旧版本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove docker  docker-common docker-selinux docker-engine</span><br></pre></td></tr></table></figure>
+<h2 id="4-安装需要的软件包"><a href="#4-安装需要的软件包" class="headerlink" title="4.安装需要的软件包"></a>4.安装需要的软件包</h2><ul>
+<li>yum-util提供yum-config-manager功能，另外两个是devicemapper驱动依赖的</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+<h2 id="5-设置yum源"><a href="#5-设置yum源" class="headerlink" title="5.设置yum源"></a>5.设置yum源</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+<h2 id="6-查看所有仓库中所有docker的版本"><a href="#6-查看所有仓库中所有docker的版本" class="headerlink" title="6.查看所有仓库中所有docker的版本"></a>6.查看所有仓库中所有docker的版本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum list docker-ce --showduplicates | sort -r</span><br></pre></td></tr></table></figure>
+<h2 id="7-安装docker"><a href="#7-安装docker" class="headerlink" title="7.安装docker"></a>7.安装docker</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install docker-ce <span class="comment">#由于repo中默认只开启stable仓库，所以安装稳定版</span></span><br><span class="line">sudo yum install &lt;version&gt; <span class="comment">#例如 sudo yum install docker-ce-17.12.0.ce</span></span><br></pre></td></tr></table></figure>
+<h2 id="8-启动并加入开机启动"><a href="#8-启动并加入开机启动" class="headerlink" title="8.启动并加入开机启动"></a>8.启动并加入开机启动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start docker</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> docker</span><br></pre></td></tr></table></figure>
+<h2 id="9-验证是否安装成功"><a href="#9-验证是否安装成功" class="headerlink" title="9.验证是否安装成功"></a>9.验证是否安装成功</h2><ul>
+<li>有client和service两部分表示安装启动都成功了</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -317,7 +334,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/photo/" rel="tag"># photo</a>
+            <a href="/tags/CentOS/" rel="tag"># CentOS</a>
+          
+            <a href="/tags/docker/" rel="tag"># docker</a>
           
         </div>
       
@@ -330,8 +349,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/16/2/" rel="next" title="spring boot整合mybatis查询数据库返回Map字段为空不返回">
-                <i class="fa fa-chevron-left"></i> spring boot整合mybatis查询数据库返回Map字段为空不返回
+              <a href="/2018/09/08/ubuntu安装后的相关配置/" rel="next" title="ubuntu安装后的相关配置">
+                <i class="fa fa-chevron-left"></i> ubuntu安装后的相关配置
               </a>
             
           </div>
@@ -340,8 +359,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/17/4/" rel="prev" title="elementUI 表格 获取数据后this.$refs.xxx.toggleRowSelection无效">
-                elementUI 表格 获取数据后this.$refs.xxx.toggleRowSelection无效 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/10/node2docker/" rel="prev" title="Node项目docker化">
+                Node项目docker化 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -394,8 +413,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -446,6 +474,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在CentOS7安装Docker"><span class="nav-number">1.</span> <span class="nav-text">在CentOS7安装Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-查看内核版本"><span class="nav-number">1.1.</span> <span class="nav-text">1.查看内核版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-使用root权限更新yum"><span class="nav-number">1.2.</span> <span class="nav-text">2.使用root权限更新yum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-卸载旧版本"><span class="nav-number">1.3.</span> <span class="nav-text">3.卸载旧版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-安装需要的软件包"><span class="nav-number">1.4.</span> <span class="nav-text">4.安装需要的软件包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-设置yum源"><span class="nav-number">1.5.</span> <span class="nav-text">5.设置yum源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-查看所有仓库中所有docker的版本"><span class="nav-number">1.6.</span> <span class="nav-text">6.查看所有仓库中所有docker的版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-安装docker"><span class="nav-number">1.7.</span> <span class="nav-text">7.安装docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-启动并加入开机启动"><span class="nav-number">1.8.</span> <span class="nav-text">8.启动并加入开机启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-验证是否安装成功"><span class="nav-number">1.9.</span> <span class="nav-text">9.验证是否安装成功</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

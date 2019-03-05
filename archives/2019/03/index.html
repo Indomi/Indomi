@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Android,adb," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,13 @@
 
 
 
-<meta name="description" content="am命令  am全称是activity manager，使用am去模拟各种系统的行为，例如启动一个activity，强制停止进程，发送广播进程，修改设备屏幕属性等 am &amp;lt;command&amp;gt;也可以加adb shell逐条运行eg:adb shell am start -a android.intent.action.VIEW">
-<meta name="keywords" content="Android,adb">
-<meta property="og:type" content="article">
-<meta property="og:title" content="adb shell 中am命令">
-<meta property="og:url" content="http://indomi.github.io/2018/09/01/adb-shell-中am-pm命令/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="寒枫">
+<meta property="og:url" content="http://indomi.github.io/archives/2019/03/index.html">
 <meta property="og:site_name" content="寒枫">
-<meta property="og:description" content="am命令  am全称是activity manager，使用am去模拟各种系统的行为，例如启动一个activity，强制停止进程，发送广播进程，修改设备屏幕属性等 am &amp;lt;command&amp;gt;也可以加adb shell逐条运行eg:adb shell am start -a android.intent.action.VIEW">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-01T08:28:00.224Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="adb shell 中am命令">
-<meta name="twitter:description" content="am命令  am全称是activity manager，使用am去模拟各种系统的行为，例如启动一个activity，强制停止进程，发送广播进程，修改设备屏幕属性等 am &amp;lt;command&amp;gt;也可以加adb shell逐条运行eg:adb shell am start -a android.intent.action.VIEW">
+<meta name="twitter:title" content="寒枫">
 
 
 
@@ -120,13 +115,13 @@
 
 
 
-  <link rel="canonical" href="http://indomi.github.io/2018/09/01/adb-shell-中am-pm命令/"/>
+  <link rel="canonical" href="http://indomi.github.io/archives/2019/03/"/>
 
 
 
 
 
-  <title>adb shell 中am命令 | 寒枫</title>
+  <title>Archive | 寒枫</title>
   
 
 
@@ -155,7 +150,7 @@
     
   
 
-  <div class="container sidebar-position-right page-post-detail">
+  <div class="container sidebar-position-right page-archive">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -289,183 +284,74 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
 
-  
+      <span class="archive-page-counter">
+        
+        
+        
+          
+        
+        Um..! 16 posts in total. Keep on posting.
+      </span>
 
-  
-  
-  
+      
+
+        
+        
+        
+
+        
+          
+          <div class="collection-title">
+            <h1 class="archive-year" id="archive-year-2019">2019</h1>
+          </div>
+        
+        
+
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://indomi.github.io/2018/09/01/adb-shell-中am-pm命令/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Indomi">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://static.pig66.com/uploadfile/2017/0526/20170526115718823.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="寒枫">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">adb shell 中am命令</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+            <a class="post-title-link" href="/2019/03/05/跨域cookie携带实践/" itemprop="url">
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span itemprop="name">跨域cookie携带实践</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T16:08:30+08:00">
-                2018-09-01
-              </time>
-            
+            </a>
+        
+      </h2>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <ul>
-<li>am命令</li>
-</ul>
-<p>am全称是activity manager，使用am去模拟各种系统的行为，例如启动一个activity，强制停止进程，发送广播进程，修改设备屏幕属性等</p>
-<p><code>am &lt;command&gt;</code><br>也可以加adb shell逐条运行<br>eg:<code>adb shell am start -a android.intent.action.VIEW</code></p>
-<a id="more"></a>
-<p>am命令介绍：<br><code>start [options] &lt;INTENT&gt;</code>:启动activity通过指定的intent参数<br><code>startservice [options] &lt;INTENT&gt;</code> ： 启动service通过指定的intent参数。具体intent跟start命令参数相同。<br><code>force-stop &lt;PACKAGE&gt;</code>： 强制停止指定的package包应用。<br><code>kill [options] &lt;PACKAGE&gt;</code> ：杀死指定package包应用进程，该命令在安全模式下杀死进程，不影响用户体验。参数选项：<code>--user &lt;USER_ID&gt; | all | current</code>: 指定user进程杀死，如果不指定默认为所有users。（关于USER_ID下面会介绍到）<br><code>kill-all</code> ：杀死所有的后台进程。<br><code>broadcast [options] &lt;INTENT&gt;</code> ：发送一个intent。具体intent参数参照start命令参数。参数选项：<code>--user &lt;USER_ID&gt; | all | current</code>: 指定user进程杀死，如果不指定默认为所有users。<br><code>instrument [options] &lt;COMPONENT&gt;</code> ：测试命令，不多作介绍。<br><code>profile start &lt;PROCESS&gt; &lt;FILE&gt;</code> ：在<process>进程中运行profile，分析结果写到<file>里。<br><code>profile stop &lt;PROCESS&gt;</code> ：停止profile。<br><code>set-debug-app [options] &lt;PACKAGE&gt;</code> ：设置package包应用为debug模式。参数选项：<code>-w|--persistent</code>：等待进入调试模式，保留值。<br><code>clear-debug-app</code> ：清空之前用set-debug-app命令设置的package包应用。</file></process></p>
-
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>Donate comment here</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>Donate</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/weixin.png" alt="Indomi WeChat Pay"/>
-        <p>WeChat Pay</p>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2019-03-05T08:31:52+08:00"
+              content="2019-03-05" >
+          03-05
+        </time>
       </div>
-    
 
-    
-
-    
-
-  </div>
-</div>
-
-      </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Android/" rel="tag"># Android</a>
-          
-            <a href="/tags/adb/" rel="tag"># adb</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/08/24/6/" rel="next" title="在Ubuntu18下adb连接不上android手机的解决方案">
-                <i class="fa fa-chevron-left"></i> 在Ubuntu18下adb连接不上android手机的解决方案
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/03/shell脚本运行完不退出窗口/" rel="prev" title="shell脚本运行完不退出窗口">
-                shell脚本运行完不退出窗口 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
       
+
     </div>
   </div>
+  
+  
+  
+
+  
+
 
 
           </div>
@@ -473,10 +359,6 @@
 
 
           
-
-  
-
-
 
         </div>
         
@@ -701,10 +583,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 

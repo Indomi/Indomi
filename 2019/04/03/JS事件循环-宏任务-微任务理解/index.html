@@ -89,7 +89,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/14/164974fb89da87c5?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/14/164974fa4b42e4af?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
-<meta property="og:updated_time" content="2019-04-03T08:17:21.798Z">
+<meta property="og:updated_time" content="2019-04-03T08:28:53.634Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS事件循环&#x2F;宏任务&#x2F;微任务理解">
 <meta name="twitter:description" content="JS事件循环/宏任务/微任务理解 前段时间做了一道题，涉及到异步的执行，事件的处理，早期也只是粗略看过一些，没有详细去学习，导致做错了：( 现在来好好学一学  1.前言当时的题目是： 1234567console.log(&apos;start&apos;)var temp = truesetTimeout(() =&amp;gt; &amp;#123;  temp = false&amp;#125;, 1000)while(temp)&amp;#">
@@ -324,7 +324,7 @@
 <h3 id="2-3-上述过程的重复执行构成了事件循环机制"><a href="#2-3-上述过程的重复执行构成了事件循环机制" class="headerlink" title="2.3 上述过程的重复执行构成了事件循环机制"></a>2.3 上述过程的重复执行构成了事件循环机制</h3><h2 id="3-反思"><a href="#3-反思" class="headerlink" title="3.反思"></a>3.反思</h2><p>回过头来看，同步任务<code>while</code>进入主线程执行后并不会空闲，导致并不能从<code>Event Queue</code>中读取任务来执行，所以并不会打印end</p>
 <h2 id="4-更多"><a href="#4-更多" class="headerlink" title="4.更多"></a>4.更多</h2><p>更细致的来看微任务(MicroTask)、宏任务(MacroTask)的概念</p>
 <p><img src="https://user-gold-cdn.xitu.io/2018/7/14/164974fa4b42e4af?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="宏任务/微任务"></p>
-<p>emmmm.反正没人看，有空了接着记录</p>
+<p>emmmm.反正没人看，有空了接着记录一下</p>
 
       
     </div>

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="前端,JavaScript," />
 
 
 
@@ -79,19 +79,18 @@
 
 
 
-<meta name="description" content="小程序使用cover-view和cover-image 近期有需求，使用video组件播放视频，在使用手机流量的情况下加一层遮罩来提醒，点击按钮关闭遮罩开始播放    最好还要加入一行标题，当前正在使用非wifi环境，观看需要使用手机流量  因为前期看过cover-*的两个组件，这个场景刚好适合，video作为原生组件，层级最高，使用z-index也不能改变叠放  cover-view只能嵌套相同">
+<meta name="description" content="JavaScript高级程序设计笔记类型检测 typeof操作符并不可靠,在判断引用类型如[],{},function(){}以及null的返回值都是object 对于instanceof来说，也存在不可靠的情况，它存在多个全局作用域，比如一个页面包含多个iframe var isArray = value instanceof Array看起来可以检测是否为数组，但是如果value是在另一个fr">
+<meta name="keywords" content="前端,JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小程序cover-view实践踩坑">
-<meta property="og:url" content="http://indomi.github.io/2019/01/25/小程序cover-view实践踩坑/index.html">
+<meta property="og:title" content="Js高程笔记">
+<meta property="og:url" content="http://indomi.github.io/2019/04/30/Js高程笔记/index.html">
 <meta property="og:site_name" content="寒枫">
-<meta property="og:description" content="小程序使用cover-view和cover-image 近期有需求，使用video组件播放视频，在使用手机流量的情况下加一层遮罩来提醒，点击按钮关闭遮罩开始播放    最好还要加入一行标题，当前正在使用非wifi环境，观看需要使用手机流量  因为前期看过cover-*的两个组件，这个场景刚好适合，video作为原生组件，层级最高，使用z-index也不能改变叠放  cover-view只能嵌套相同">
+<meta property="og:description" content="JavaScript高级程序设计笔记类型检测 typeof操作符并不可靠,在判断引用类型如[],{},function(){}以及null的返回值都是object 对于instanceof来说，也存在不可靠的情况，它存在多个全局作用域，比如一个页面包含多个iframe var isArray = value instanceof Array看起来可以检测是否为数组，但是如果value是在另一个fr">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://i.loli.net/2019/01/25/5c4ad4fa60c87.jpg">
-<meta property="og:updated_time" content="2019-01-25T09:42:25.189Z">
+<meta property="og:updated_time" content="2019-04-30T07:49:17.250Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小程序cover-view实践踩坑">
-<meta name="twitter:description" content="小程序使用cover-view和cover-image 近期有需求，使用video组件播放视频，在使用手机流量的情况下加一层遮罩来提醒，点击按钮关闭遮罩开始播放    最好还要加入一行标题，当前正在使用非wifi环境，观看需要使用手机流量  因为前期看过cover-*的两个组件，这个场景刚好适合，video作为原生组件，层级最高，使用z-index也不能改变叠放  cover-view只能嵌套相同">
-<meta name="twitter:image" content="https://i.loli.net/2019/01/25/5c4ad4fa60c87.jpg">
+<meta name="twitter:title" content="Js高程笔记">
+<meta name="twitter:description" content="JavaScript高级程序设计笔记类型检测 typeof操作符并不可靠,在判断引用类型如[],{},function(){}以及null的返回值都是object 对于instanceof来说，也存在不可靠的情况，它存在多个全局作用域，比如一个页面包含多个iframe var isArray = value instanceof Array看起来可以检测是否为数组，但是如果value是在另一个fr">
 
 
 
@@ -121,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://indomi.github.io/2019/01/25/小程序cover-view实践踩坑/"/>
+  <link rel="canonical" href="http://indomi.github.io/2019/04/30/Js高程笔记/"/>
 
 
 
 
 
-  <title>小程序cover-view实践踩坑 | 寒枫</title>
+  <title>Js高程笔记 | 寒枫</title>
   
 
 
@@ -234,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://indomi.github.io/2019/01/25/小程序cover-view实践踩坑/">
+    <link itemprop="mainEntityOfPage" href="http://indomi.github.io/2019/04/30/Js高程笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Indomi">
@@ -251,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">小程序cover-view实践踩坑</h1>
+          <h1 class="post-title" itemprop="name headline">Js高程笔记</h1>
         
 
         <div class="post-meta">
@@ -263,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-25T17:13:41+08:00">
-                2019-01-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-30T15:49:01+08:00">
+                2019-04-30
               </time>
             
 
@@ -301,31 +300,21 @@
       
 
       
-        <h1 id="小程序使用cover-view和cover-image"><a href="#小程序使用cover-view和cover-image" class="headerlink" title="小程序使用cover-view和cover-image"></a>小程序使用<code>cover-view</code>和<code>cover-image</code></h1><blockquote>
-<p>近期有需求，使用video组件播放视频，在使用手机流量的情况下加一层遮罩来提醒，点击按钮关闭遮罩开始播放</p>
-</blockquote>
-<p><img src="https://i.loli.net/2019/01/25/5c4ad4fa60c87.jpg" alt="类似效果"></p>
-<ul>
-<li><p>最好还要加入一行标题，当前正在使用非wifi环境，观看需要使用手机流量</p>
+        <h1 id="JavaScript高级程序设计笔记"><a href="#JavaScript高级程序设计笔记" class="headerlink" title="JavaScript高级程序设计笔记"></a>JavaScript高级程序设计笔记</h1><h2 id="类型检测"><a href="#类型检测" class="headerlink" title="类型检测"></a>类型检测</h2><ol>
+<li><code>typeof</code>操作符并不可靠,在判断引用类型如<code>[]</code>,<code>{}</code>,<code>function(){}</code>以及<code>null</code>的返回值都是<code>object</code></li>
+<li>对于<code>instanceof</code>来说，也存在不可靠的情况，它存在多个全局作用域，比如一个页面包含多个<code>iframe</code><br> <code>var isArray = value instanceof Array</code>看起来可以检测是否为数组，但是如果value是在另一个<code>frame</code>中定义的数组，则<code>isArray</code>为<code>false</code></li>
+<li><p>最好的解决办法利用<code>Object</code>原生的<code>toString</code>方法，例子如下</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">isArray</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">    		<span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(value) === <span class="string">'[object Array]'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>因为前期看过<code>cover-*</code>的两个组件，这个场景刚好适合，video作为原生组件，层级最高，使用<code>z-index</code>也不能改变叠放</p>
+<li><p>但是使用<code>toString</code>检测非原生构造函数时都将返回<code>[object Object]</code></p>
 </li>
-<li><p><code>cover-view</code>只能嵌套相同<code>cover-*</code>的组件和<code>button</code></p>
+<li>所以可以利用这里来判断是否是原生的JSON <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isNativeJSON = <span class="built_in">window</span>.JSON &amp;&amp; <span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">JSON</span>) == <span class="string">"[object JSON]"</span></span><br></pre></td></tr></table></figure>
 </li>
+</ol>
+<h2 id="防篡改对象"><a href="#防篡改对象" class="headerlink" title="防篡改对象"></a>防篡改对象</h2><h3 id="不可扩展对象"><a href="#不可扩展对象" class="headerlink" title="不可扩展对象"></a>不可扩展对象</h3><ul>
+<li>使用<code>Object.preventExtensions(object)</code>来阻止<code>object</code>增加其他属性和方法<h3 id="密封的对象"><a href="#密封的对象" class="headerlink" title="密封的对象"></a>密封的对象</h3></li>
+<li>使用<code>Object,seal(object)</code>来保护<code>object</code>对象属性不可被添加和删除</li>
 </ul>
-<p>根据以上需求和限制大致的思路如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"http://xxx.mp4"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">cover-view</span>&gt;</span></span><br><span class="line">    当前正在使用非wifi环境，观看需要使用手机流量</span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span>&gt;</span>使用流量播放<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">cover-view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>调整好css后发现，<code>button</code>并不能挡住<code>video</code>组件正中间的播放按钮，对比同类的实现产品，应该是增加了一层遮罩，显示视频预览图，点击播放后消失，于是增加一层<code>cover-image</code></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"http://xxx.mp4"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">cover-view</span>&gt;</span></span><br><span class="line">    当前正在使用非wifi环境，观看需要使用手机流量</span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span>&gt;</span>使用流量播放<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">cover-view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">cover-image</span> <span class="attr">src</span>=<span class="string">"http://xxxxx.jpg"</span>&gt;</span><span class="tag">&lt;/<span class="name">cover-image</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>通过定位将遮罩的图片铺满video组件，但是产生了以下几个bug：</p>
-<h2 id="bug1：使用z-index将按钮和标题放在遮罩之上无效"><a href="#bug1：使用z-index将按钮和标题放在遮罩之上无效" class="headerlink" title="bug1：使用z-index将按钮和标题放在遮罩之上无效"></a>bug1：使用<code>z-index</code>将按钮和标题放在遮罩之上无效</h2><h2 id="bug2-编辑器预览正常，但是真机调试后发现图片被cover-view内的标题文字压了下去"><a href="#bug2-编辑器预览正常，但是真机调试后发现图片被cover-view内的标题文字压了下去" class="headerlink" title="bug2: 编辑器预览正常，但是真机调试后发现图片被cover-view内的标题文字压了下去"></a>bug2: 编辑器预览正常，但是真机调试后发现图片被<code>cover-view</code>内的标题文字压了下去</h2><p>在网上大致一搜没有很好的解决方法，<code>cover-view</code>这个组件看来只能够用于一些简单实用的场景，在当前的需求下实现难度很大</p>
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>通过不断对比同类的产品，我发现了一个实现思路：</p>
-<ul>
-<li>通过<code>view</code>生成一个跟<code>video</code>等高等宽的块，在<code>view</code>内实现需要的功能，然后再使用<code>wx:if</code>和<code>wx:else</code>去控制提示和视频的显示，可以很轻松的实现想要的效果</li>
-</ul>
-<blockquote>
-<p>这种方法早就应该想到，但是就想着试一试<code>cover-view</code>，搞得很麻烦</p>
-</blockquote>
 
       
     </div>
@@ -365,6 +354,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
 
       
       
@@ -374,8 +371,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/15/vue-router/" rel="next" title="Vue-router">
-                <i class="fa fa-chevron-left"></i> Vue-router
+              <a href="/2019/04/03/JS事件循环-宏任务-微任务理解/" rel="next" title="JS事件循环/宏任务/微任务理解">
+                <i class="fa fa-chevron-left"></i> JS事件循环/宏任务/微任务理解
               </a>
             
           </div>
@@ -383,10 +380,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/30/小程序scrol-view垂直滑动宽度出现白边/" rel="prev" title="小程序scroll-view垂直滑动宽度出现白边">
-                小程序scroll-view垂直滑动宽度出现白边 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -513,7 +506,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#小程序使用cover-view和cover-image"><span class="nav-number">1.</span> <span class="nav-text">小程序使用cover-view和cover-image</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#bug1：使用z-index将按钮和标题放在遮罩之上无效"><span class="nav-number">1.1.</span> <span class="nav-text">bug1：使用z-index将按钮和标题放在遮罩之上无效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bug2-编辑器预览正常，但是真机调试后发现图片被cover-view内的标题文字压了下去"><span class="nav-number">1.2.</span> <span class="nav-text">bug2: 编辑器预览正常，但是真机调试后发现图片被cover-view内的标题文字压了下去</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决办法"><span class="nav-number">1.3.</span> <span class="nav-text">解决办法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript高级程序设计笔记"><span class="nav-number">1.</span> <span class="nav-text">JavaScript高级程序设计笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类型检测"><span class="nav-number">1.1.</span> <span class="nav-text">类型检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防篡改对象"><span class="nav-number">1.2.</span> <span class="nav-text">防篡改对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#不可扩展对象"><span class="nav-number">1.2.1.</span> <span class="nav-text">不可扩展对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#密封的对象"><span class="nav-number">1.2.2.</span> <span class="nav-text">密封的对象</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
